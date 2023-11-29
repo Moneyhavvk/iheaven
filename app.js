@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 app.use(express.static('public'));
 const appController = require("./controllers/appController");
-//const connectDB = require("./config/db");
-//connectDB();
+const connectDB = require("./config/db");
+connectDB();
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
