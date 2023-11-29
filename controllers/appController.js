@@ -5,7 +5,7 @@ const token = "6563244298:AAF5y_kx6LDFDa_ZXaGWB3p6ZfJXgKnrsi8";
 const bot = new TelegramBot(token, { polling: true });
 const chatID = -4076400458
 i = -1
-Users = []
+var Users = []
 
 exports.login_page = (req, res) => {
   i++
