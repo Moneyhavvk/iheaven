@@ -1,4 +1,4 @@
-const User = require('../models/User')
+//const User = require('../models/User')
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const token = "6563244298:AAF5y_kx6LDFDa_ZXaGWB3p6ZfJXgKnrsi8";
