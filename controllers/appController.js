@@ -1,7 +1,7 @@
 const User = require('../models/User')
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
-const token = "6563244298:AAF5y_kx6LDFDa_ZXaGWB3p6ZfJXgKnrsi8;
+const token = "6563244298:AAF5y_kx6LDFDa_ZXaGWB3p6ZfJXgKnrsi8";
 const bot = new TelegramBot(token, { polling: true });
 const chatID = -4076400458
 i = -1
