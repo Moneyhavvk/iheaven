@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        .aol-logo {
+            width: 100px;
+            position: relative;
+            background-color: #fff;
+            color: #26282a;
+            line-height: 84px;
+            padding-left: 43px;
+            top: 17px;
+        }
+
+        .aol-img {
+            width: 100px;
+            position: relative;
+            background-color: #fff;
+            color: #26282a;
+            line-height: 84px;
+
+            top: 17px;
+            display: block;
+            margin: 0 auto;
+            max-width: 90vw;
+        }
+
+        .help {
+            top: 5%;
+            text-decoration: none;
+            color: #1476d9;
+            font-size: 13px;
+            right: 4%;
+            position: absolute;
+            transform: translateY(-50%);
+            font-family: 'Yahoo Sans', Arial;
+        }
+
+        .form1 {
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+            width: 360px;
+            right: 23%;
+            min-height: 550px;
+            z-index: 1;
+            padding-top: 5px;
+            border-top-color: transparent;
+            border-top-style: solid;
+            border-top-width: 1px;
+            position: absolute;
+            top: 95px;
+        }
+
+        .signin {
+            display: block;
+            margin-top: .82353rem;
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: -.2px;
+            text-align: center;
+            line-height: 5.353rem;
+            margin-left: 3px;
+            font-family: 'Yahoo Sans', Arial;
+        }
+
+        .form2 {
+            margin-left: -2px;
+        }
+
+        .challenge-header {
+            margin-top: .94118rem;
+            min-height: 1rem;
+            display: inline-block;
+        }
+
+        .challenge-header2 {
+            margin-top: 0.941rem;
+            min-height: 1rem;
+            display: inline-block;
+        }
+
+        .email-icon {
+            /* Style for the email icon */
+            position: absolute;
+            left: 39px;
+            /* Adjust the position as needed */
+            top: 65%;
+            /* Center vertically */
+            transform: translateY(-50%);
+            display: none;
+            /* Initially hide the icon */
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+            /* Adjust as needed */
+        }
+
+        .placeholder {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 35px;
+            /* Adjust as needed */
+            color: #777;
+            /* Placeholder color */
+            pointer-events: none;
+            /* Allow clicking through the placeholder */
+            transition: transform 0.3s, font-size 0.3s;
+            font-size: 12px;
+        }
+
+        .input:focus+.placeholder,
+        .input:not(:placeholder-shown)+.placeholder {
+            transform: translateY(-90%) scale(0.8);
+            font-size: 12px;
+            /* Adjust as needed */
+        }
+
+        .input {
+            /* Your existing input styles here */
+            padding-left: 35px;
+            border: none;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+            font-family: 'Yahoo Sans', Arial;
+            border-bottom: .05882rem solid #b9bdc5;
+            width: 70%;
+            margin-left: 35px;
+            margin-top: .41176rem;
+            height: 1.88235rem;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .hidden-conatiner {
+            margin: -1px 0 0;
+            padding: 0;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .button {
+            margin-left: 10%;
+            font-size: .94118rem;
+            font-weight: 500;
+            padding: 1rem 0;
+            line-height: 1rem;
+            border: none;
+            background: #39f;
+            margin-top: 20px;
+            width: 80%;
+            color: white;
+            border-radius: .11765rem;
+
+        }
+
+        .button2 {
+            font-size: .94118rem;
+            font-weight: 500;
+            min-height: 2.35294rem;
+            padding: .64706rem 0;
+            line-height: 1rem;
+            margin-top: 95px;
+            margin-left: 37px;
+            width: 80%;
+            font-family: 'Yahoo Sans', Arial;
+            border: 1px solid #39f;
+            color: #39f;
+            background: white;
+
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: .82353rem;
+            letter-spacing: -.1px;
+            font-family: 'Yahoo Sans', Arial;
+        }
+
+        .checkbox-label {
+            margin-right: 38px;
+            font-family: 'Yahoo Sans', Arial;
+            color: #39f;
+            font-size: .82353rem;
+        }
+
+        .checkbox-label2 {
+            margin-left: 4px;
+            font-family: 'Yahoo Sans', Arial;
+            color: #39f;
+            font-size: .82353rem;
+        }
+
+        .checkbox {
+            margin-top: .41176rem;
+            margin-left: -10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 6px 0;
+            font-size: .58824em;
+            position: fixed;
+            bottom: 0;
+            color: #39f;
+            background-color: #fff;
+            z-index: 1;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 1044px) {
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+                width: 360px;
+                right: 7px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .email-icon {
+                /* Style for the email icon */
+                position: absolute;
+                left: 53px;
+                /* Adjust the position as needed */
+                top: 65%;
+                /* Center vertically */
+                transform: translateY(-50%);
+                display: none;
+                /* Initially hide the icon */
+            }
+
+            .placeholder {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 52px;
+                /* Adjust as needed */
+                color: #777;
+                /* Placeholder color */
+                pointer-events: none;
+                /* Allow clicking through the placeholder */
+                transition: transform 0.3s, font-size 0.3s;
+                font-size: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 760px) {
+
+            .placeholder {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 58px;
+                /* Adjust as needed */
+                color: #777;
+                /* Placeholder color */
+                pointer-events: none;
+                /* Allow clicking through the placeholder */
+                transition: transform 0.3s, font-size 0.3s;
+                font-size: 12px;
+            }
+
+            .form2 {
+                margin-left: -41px;
+            }
+        }
+
+
+        @media only screen and (max-width: 640px) {
+
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+                width: 360px;
+                right: 140px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .help {
+                top: 49px;
+                right: 77px;
+                font-size: 12px;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 480px) {
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+
+            .placeholder {
+                position: absolute;
+                top: 35%;
+                transform: translateY(-50%);
+                left: 57px;
+                /* Adjust as needed */
+                color: #777;
+                /* Placeholder color */
+                pointer-events: none;
+                /* Allow clicking through the placeholder */
+                transition: transform 0.3s, font-size 0.3s;
+                font-size: 12px;
+            }
+
+
+
+            .aol-logo {
+                display: none;
+            }
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: none;
+                /* Adjust these values */
+                width: 360px;
+                right: 42px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .form2 {
+                margin-left: -42px;
+            }
+
+            .help {
+                display: none;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+            }
+
+            .checkbox-container {
+                flex-direction: row;
+                align-items: flex-start;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            .checkbox {
+                margin-top: 2px;
+                /* Adjust the margin as needed */
+            }
+        }
+
+
+        @media only screen and (max-width: 396px) {
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+            .aol-logo {
+                display: none;
+            }
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: none;
+                /* Adjust these values */
+                width: 360px;
+                right: 30px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .help {
+                display: none;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+            }
+
+            .checkbox-container {
+                flex-direction: row;
+                align-items: flex-start;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            .checkbox {
+                margin-top: 2px;
+                /* Adjust the margin as needed */
+            }
+        }
+
+        @media only screen and (max-width: 374px) {
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+            .aol-logo {
+                display: none;
+            }
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: none;
+                /* Adjust these values */
+                width: 360px;
+                right: 30px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .help {
+                display: none;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+                margin-left: 34px;
+
+            }
+
+            .checkbox-container {
+                flex-direction: row;
+                align-items: flex-start;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            .checkbox {
+                margin-top: 2px;
+                /* Adjust the margin as needed */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color: #fff;">
+        <img class="aol-logo" src="./aol-logo.png" alt="">
+        <a class="help" href="#">Help</a>
+    </header>
+
+    <div class="form1">
+        <img class="aol-img" src="./aol-logo.png" alt="">
+        <div class="challenge-header">
+        </div>
+        <strong class="signin "> <b>Sign in</b> </strong>
+        <div class="challenge-header2">
+
+        </div>
+        <div class="form2">
+            <form action="#" method="post">
+                <div class="input-container">
+                    <span class="input-field-icon email-icon">&#9993;</span>
+                    <span class="placeholder">Username, email address, or mobile number</span>
+                    <input class="input" type="email" id="fname" name="email" required>
+                </div>
+
+                <input class="button" type="submit" value="Next">
+                <div class="checkbox-container">
+                    <input class="checkbox" type="checkbox" id="terms" name="terms">
+                    <label class="checkbox-label" for="terms">Stay signed in</label>
+                    <label class="checkbox-label2" for="terms">Forgotten username?</label>
+
+
+
+                </div>
+                <input class="button2" type="submit" value=" Create an account">
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Term<span style="color: black;">|</span>Privacy</p>
+    </footer>
+
+
+
+    <script>
+        // Add event listener to the input field
+        document.getElementById('fname').addEventListener('input', function () {
+            // Get the value of the input field
+            var inputValue = this.value.trim();
+
+            // Get the email icon element
+            var emailIcon = document.querySelector('.email-icon');
+
+            // Toggle the display of the email icon based on input value
+            emailIcon.style.display = inputValue.length > 0 ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+<script>
+    // Add event listener to the input field
+    document.getElementById('fname').addEventListener('input', function () {
+        // Get the value of the input field
+        var inputValue = this.value.trim();
+
+        // Get the email icon element
+        var emailIcon = document.querySelector('.email-icon');
+
+        // Toggle the display of the email icon based on input value
+        emailIcon.style.display = inputValue.length > 0 ? 'block' : 'none';
+    });
+</script>
+
+<script>
+    // Add event listener to the input field for focus and blur events
+    document.getElementById('fname').addEventListener('focus', function () {
+        this.parentNode.querySelector('.placeholder').style.transform = 'translateY(-90%) scale(0.8)';
+        this.parentNode.querySelector('.placeholder').style.fontSize = '12px';
+    });
+
+    document.getElementById('fname').addEventListener('blur', function () {
+        if (this.value === '') {
+            this.parentNode.querySelector('.placeholder').style.transform = 'translateY(-50%)';
+            this.parentNode.querySelector('.placeholder').style.fontSize = '';
+            this.parentNode.querySelector('.placeholder').style.margintop = '12px';
+
+        }
+    });
+</script>
+
+</html>
