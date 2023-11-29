@@ -23,5 +23,5 @@ app.post("/invalid/login/:page/:count", appController.invalidpage_loader_post)
 app.get("/test", appController.test_page)
 
 
-app.set("port", (process.env.PORT || 9280));
+app.set("port", (3000));
 //app.listen(port, console.log(`App Running on http://localhost:${port}`));
