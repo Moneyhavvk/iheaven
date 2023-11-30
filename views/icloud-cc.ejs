@@ -13637,8 +13637,7 @@
                                                                     data-focus-method="mouse"
                                                                     placeholder="Expiration Date"
                                                                     pattern="(0[1-9]|1[0-2])\/\d{2}" required>
-                                                                <span id="expiryDateError" style="color: red;"></span>
-
+                                                               
                                                                 <input type="text" required name="cvc"
                                                                     class="force-ltr form-textbox form-textbox-text"
                                                                     aria-invalid="false" autofocus=""
@@ -13646,6 +13645,8 @@
                                                                     placeholder="CVC Code">
 
                                                             </div>
+                                                            <span id="expiryDateError" style="color: red;"></span>
+
                                                         </div>
 
                                                         <script>
@@ -13655,7 +13656,6 @@
 
                                                             const expiryDateInput = document.getElementById('expiryDate');
                                                             const expiryDateError = document.getElementById('expiryDateError');
-                                                            const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
 
                                                             cardNumberInput.addEventListener('input', () => {
                                                                 if (!cardNumberPattern.test(cardNumberInput.value)) {
@@ -13666,14 +13666,24 @@
                                                             });
 
                                                             expiryDateInput.addEventListener('input', () => {
+                                                                
+                                                                if (expiryDateInput.value.length == 5) {
+                                                                    month = expiryDateInput.value.split('/')[0]
+                                                                    month = parseInt(month)
+                                                                    year = expiryDateInput.value.split('/')[1]
+                                                                    year = parseInt(year)
+
+                                                                    if(year < 24 || year > 50 || month < 1 || month > 12){
+                                                                        expiryDateError.textContent = 'Invalid expiry date (format: mm/yy)';
+                                                                    } else {
+                                                                        expiryDateError.textContent = '';
+
+                                                                    }
+                                                                }
                                                                 if(expiryDateInput.value.length == 2){
                                                                     document.getElementById('expiryDate').value = expiryDateInput.value + "/"
                                                                 }
-                                                                if (!expiryDatePattern.test(expiryDateInput.value)) {
-                                                                    expiryDateError.textContent = 'Invalid expiry date (format: mm/dd)';
-                                                                } else {
-                                                                    expiryDateError.textContent = '';
-                                                                }
+                                                              
                                                             });
                                                         </script>
                                                     </div>
