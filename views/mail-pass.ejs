@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free email accounts with mail.com | Log in here or register today</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .div1 {
+            position: sticky;
+            top: 0px;
+            z-index: 2;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav1 {
+            background-color: #004788;
+            height: 6.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav img {
+            width: 170px;
+            margin: 15px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .link-text {
+            font-family: Droid, sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 1.5rem;
+            cursor: pointer;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 0px;
+            margin: 0 10px;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form input {
+            width: 326px;
+            padding: 8px;
+            height: 40px;
+            border: 0;
+            outline: none;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .search-form button {
+            background-color: #008000;
+            color: white;
+            border: none;
+            padding: 11px 12px;
+            cursor: pointer;
+            margin-left: -13px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 5px;
+            height: 40px;
+        }
+
+        .ul1 {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .li1 {
+            margin: 0 10px;
+        }
+
+        .li1 a {
+            color: black;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .li1 a img {
+            margin-right: 5px;
+            width: 25px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 13px 0px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropbtn {
+            border-bottom: 2px solid #004788;
+            /* Blue border on hover */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 267px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 55px;
+            margin-left: 13px;
+            border-top: 2px solid #004788;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown.clicked .dropdown-content {
+            display: block;
+        }
+
+        .dropdown .dropbtn .dropdown-icon {
+            margin-left: -2px;
+            width: 30px;
+            vertical-align: middle;
+        }
+
+        .nav2 {
+            height: 3.1rem;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            background-color: #f3f3f3;
+        }
+
+        .container-header {
+            border-bottom: .5rem solid #004788;
+            font-size: 0;
+            font-weight: 700;
+        }
+
+        .ptag {
+            display: inline-block;
+            font-size: 1rem;
+            padding: 0.5rem 0.5rem 0 0.5rem;
+            color: #fff;
+            background-color: #004788;
+            margin: 0;
+        }
+
+        .li1 {
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+            /* Adjust the padding as needed */
+            margin-bottom: 10px;
+            /* Adjust the margin as needed */
+        }
+
+        .li1::before {
+            content: '\2713';
+            /* Unicode character for a checkmark */
+            color: green;
+            /* Color of the checkmark */
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .input-container {
+            display: flex;
+            margin-top: 20px;
+            padding-inline-start: 40px;
+            gap: 1rem;
+        }
+
+        .checkavailability {
+            display: none;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            margin-bottom: 5px;
+        }
+
+        .input-field {
+            padding: 10px;
+            height: 1rem;
+        }
+
+        .input-group select {
+            width: 20px;
+            padding: 10px;
+            margin-left: -23px;
+            background-color: transparent;
+            border: none;
+        }
+
+        .custom-button {
+            background-color: #008000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 23px;
+            border-radius: 0.2em;
+            padding: 10px;
+            font-size: medium;
+        }
+
+        .container-header3 {
+            border-bottom: .5rem solid #004788;
+            font-size: 0;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-left: 15px;
+        }
+
+        .container-header4 {
+            border-bottom: .5rem solid #004788;
+            font-size: 0;
+            font-weight: 700;
+            padding-top: 3rem;
+            margin-bottom: 1rem;
+            margin-left: 15px;
+            margin-top: -32px;
+        }
+
+        .teaser-text {
+            height: 4.1rem;
+            overflow: hidden;
+            flex: 0 0 auto;
+            margin-top: .5rem;
+            margin-left: 15px;
+        }
+
+        .teaser-text:hover {
+            background-color: rgb(240, 236, 236);
+        }
+
+
+        .teaser-headline {
+            font-size: 15px;
+            line-height: 26px;
+            color: var(--teaser-headline);
+            font-weight: 700;
+        }
+
+        .teaser-label {
+            display: block;
+            font-size: 12px;
+            line-height: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .h31 {
+            font-size: 34px;
+            line-height: 2.6rem;
+            font-weight: 700;
+            margin: 0 21px 1.2rem;
+            padding: 0;
+            color: #004788;
+        }
+
+        .av-button-mob {
+            display: none;
+        }
+
+        .header3content1,
+        .header3content2,
+        .header3content3 {
+            display: flex;
+
+        }
+
+        .div1mob {
+            display: none;
+        }
+
+        .mob-signup-btn {
+            border: 1px solid;
+            padding: 0.2rem 0.4rem !important;
+            border-radius: 0.3rem;
+        }
+
+
+        .backgroundimage {
+            width: 70%;
+        }
+
+        .search {
+            color: white;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+
+        .searchicon {
+            color: white;
+        }
+
+        .useriscon {
+            color: white;
+            font-size: 24px;
+        }
+
+        .loginicon {
+            font-size: 24px;
+            color: white;
+        }
+
+        .homeicon {
+            color: black;
+        }
+
+        .blogbtn {
+            color: black;
+            text-decoration: none;
+        }
+
+        .div2 {
+            background-color: #ffffff;
+            height: auto;
+            padding: 1rem;
+        }
+
+        .sponsorednews {
+            display: flex;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+
+        .newsimg {
+            padding-left: 15px;
+        }
+
+        .mailemail {
+            margin: 2rem 0;
+            width: 70%;
+            height: auto;
+            background-image: url(./background.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: grid;
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+
+        .optgroup {
+            display: flex;
+        }
+
+        .mailgif {
+            margin-left: 16px;
+        }
+
+        .col1 {
+            width: 350px;
+        }
+
+        .img6 {
+            margin-left: 16px;
+        }
+
+        .img8 {
+            margin-left: 39px;
+        }
+
+        .form-control {
+            box-sizing: border-box;
+            width: 30%;
+            padding: .8rem 1rem;
+            font-size: 1.2rem;
+            line-height: 2rem;
+            border: 1px solid #aaa;
+            color: var(--portal-cadet);
+            border-radius: .4rem;
+            background-color: #fff;
+            height: 3rem;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        .text-muted:hover {
+            color: #004788;
+        }
+
+        .login-contaimer {
+            background-color: #ffffff;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        form.login-content {
+            padding: 2rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
+            width: 90%;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: end;
+            gap: 2rem;
+        }
+
+        .mt-1 {
+            margin-top: 1rem;
+        }
+
+        .emailfield {
+            display: grid;
+        }
+
+        .passwordfield {
+            display: grid;
+        }
+
+        input.w-100 {
+            width: 100%;
+        }
+
+        button.login-button {
+            color: #fff;
+            background-color: #008000;
+            border: none;
+            font-size: larger;
+            border-radius: 4px;
+            height: 3rem;
+            padding: 0rem 2rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .headline {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.6rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        span.login-ssl {
+            color: #008000;
+            position: relative;
+        }
+
+        .col_white_amrc {
+            color: #585858;
+            text-decoration: none;
+            display: block;
+            padding: 0 0 0 1rem;
+            font-weight: 700;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #f5f5f5;
+            min-height: 250px;
+            padding: 10px 0px 25px 0px;
+        }
+
+        .pt2 {
+            margin-bottom: 10px;
+            padding: 0;
+            border-bottom: 1px solid #c2c2c2;
+            font-size: 1rem;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #CCC;
+            padding-bottom: 0px;
+            margin-bottom: 8px;
+        }
+
+        .mb10 {
+            padding-bottom: 15px;
+        }
+
+        .footer_ul_amrc {
+            margin: 0px;
+            list-style-type: none;
+            font-size: 14px;
+            padding: 0px 0px 10px 0px;
+        }
+
+        .footer_ul_amrc li {
+            padding: 0px 0px 5px 0px;
+            text-decoration: none;
+        }
+
+        .footer_ul_amrc li a {
+            color: #585858;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .footer_ul_amrc li a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .fleft {
+            float: left;
+        }
+
+        .padding-right {
+            padding-right: 10px;
+        }
+
+        .footer_ul2_amrc {
+            margin: 0px;
+            list-style-type: none;
+            padding: 0px;
+        }
+
+        .footer_ul2_amrc li p {
+            display: table;
+        }
+
+        .footer_ul2_amrc li a:hover {
+            text-decoration: none;
+        }
+
+        .footer_ul2_amrc li i {
+            margin-top: 5px;
+        }
+
+        .foote_bottom_ul_amrc {
+            list-style-type: none;
+            padding: 0px;
+            display: table;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-bottom: 10px;
+            margin-left: auto;
+        }
+
+        .foote_bottom_ul_amrc li {
+            display: inline;
+        }
+
+        .foote_bottom_ul_amrc li a {
+            color: #999;
+            margin: 0 12px;
+        }
+
+        .social_footer_ul {
+            display: table;
+            margin: 1rem auto 2rem auto;
+            list-style-type: none;
+        }
+
+        .social_footer_ul li {
+            padding-left: 20px;
+            padding-top: 10px;
+            float: left;
+        }
+
+        .social_footer_ul li a {
+            color: #575555;
+            border: 3px solid #575555;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .social_footer_ul li i {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+
+        .ul1 {
+            display: flex;
+            margin-top: 12px;
+            justify-content: space-evenly;
+            list-style-type: none;
+            font-size: 12px;
+            color: #004788;
+        }
+
+        .ul1 a {
+            text-decoration: none !important;
+            color: #004788;
+            font-weight: 600;
+        }
+
+        .ul1 li:before {
+            content: "|";
+        }
+
+        .ul1 li:first-child::before {
+            display: none;
+        }
+
+        .bottom_border .row {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .copyright p {
+            color: #575555;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: 730px) {
+
+            .navbar {
+                gap: 0.5rem;
+            }
+
+            .av-button-mob {
+                display: block;
+            }
+
+            .nav1 {
+                height: 4rem;
+            }
+
+            .sponsorednews {
+                display: grid !important;
+            }
+
+            .mailemail {
+                width: 100%;
+            }
+
+            nav img {
+                width: 140px;
+                margin: 5px;
+                left: 15%;
+                position: absolute;
+            }
+
+            .bottom_border .row {
+                display: block;
+            }
+
+            .ul1 {
+                display: grid;
+                gap: 1rem;
+            }
+
+            .ul1 li::before {
+                content: " ";
+            }
+
+            .div1mob {
+                display: block;
+            }
+
+            .div1 {
+                display: none;
+            }
+
+            .header3content1,
+            .header3content2,
+            .header3content3 {
+                display: block;
+                width: 100%;
+                overflow: hidden;
+
+            }
+
+            .mailgif {
+                width: 100%;
+            }
+
+            .nav2 {
+                display: none;
+            }
+
+            .h31 {
+                font-size: 2rem;
+            }
+
+            .input-container {
+                display: none;
+            }
+
+            .checkavailability {
+                display: block;
+                cursor: pointer;
+                text-align: center;
+                background-color: #008000;
+                color: #fff;
+                background-image: none;
+                border: 1px solid transparent;
+                text-decoration: none;
+                height: 2.3rem;
+                width: 90%;
+                font-size: 1rem;
+                font-weight: 500;
+                border-radius: 0.4rem;
+                margin: 0 5%;
+            }
+
+            .backgroundimage {
+                width: 12%;
+            }
+
+            form.login-content {
+                width: 80%;
+            }
+
+            .form-row {
+                display: grid;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container div1">
+        <nav class="nav1">
+            <img src="/logo.svg" alt="">
+            <form class="search-form">
+                <span class="search">Search</span>
+                <input type="search" id="form1" class="form-control">
+                <button type="button">
+                    <i class="fas fa-search searchicon"></i>
+                </button>
+            </form>
+            <div class="navbar">
+                <a class="user-link" href="#">
+                    <i class="fas fa-user useriscon"></i>
+                    <span class="link-text">Sign Up</span>
+                </a>
+                <a class="user-link" href="#">
+                    <i class="fa loginicon"></i>
+                    <span class="link-text">Log in</span>
+                </a>
+            </div>
+        </nav>
+        <nav class="nav2">
+            <a href="#home" class="home">
+                <i class="fas fa-home homeicon"></i>
+            </a>
+            &nbsp;&nbsp;&nbsp;<span style="color: #c2c2c2;"> | </span>
+            <div class="dropdown" onclick="toggleDropdown(this.querySelector('.dropbtn'))">
+                <a href="#" class="dropbtn">
+                    Email <img class="dropdown-icon" src="/drop.png" alt="Dropdown Icon">
+                </a>
+                <div class="dropdown-content">
+                    <a href="#service1">Email</a>
+                    <a href="#service2">Create email account</a>
+                    <a href="#service3">Domains</a>
+                    <a href="#service3">Mail app</a>
+                    <a href="#service3">Email address ideas</a>
+                    <a href="#service3">Business</a>
+                    <a href="#service3">Mail Collector</a>
+                    <a href="#service3">MailCheck</a>
+                    <a href="#service3">Premium</a>
+                </div>
+            </div>
+            <div class="dropdown" onclick="toggleDropdown(this.querySelector('.dropbtn'))">
+                <a href="#" class="dropbtn">
+                    Features <img class="dropdown-icon" src="/drop.png" alt="Dropdown Icon">
+                </a>
+                <div class="dropdown-content">
+                    <a href="#service1">Organizer</a>
+                    <a href="#service2">Contacts</a>
+                    <a href="#service3">Online Office</a>
+                    <a href="#service3">Search</a>
+                    <a href="#service3">Firefox + mail.com</a>
+                </div>
+            </div>
+            <div class="dropdown" onclick="toggleDropdown(this.querySelector('.dropbtn'))">
+                <a href="#" class="dropbtn">
+                    Cloud <img class="dropdown-icon" src="/drop.png" alt="Dropdown Icon">
+                </a>
+                <div class="dropdown-content">
+                    <a href="#service1">Cloud</a>
+                    <a href="#service2">Cloud backup</a>
+                    <a href="#service3">Cloud upgrade</a>
+                    <a href="#service3">Cloud for Windows & macOS</a>
+                </div>
+            </div>
+            <div class="dropdown" onclick="toggleDropdown(this.querySelector('.dropbtn'))">
+                <a href="#" class="dropbtn">
+                    Security <img class="dropdown-icon" src="/drop.png" alt="Dropdown Icon">
+                </a>
+                <div class="dropdown-content">
+                    <a href="#service1">Security</a>
+                    <a href="#service2">Spam filter</a>
+                    <a href="#service3">Antivirus</a>
+                    <a href="#service3">Password</a>
+                    <a href="#service3">Two-factor authentication</a>
+                </div>
+            </div>
+            <div class="dropdown" onclick="toggleDropdown(this.querySelector('.dropbtn'))">
+                <a href="#" class="dropbtn">
+                    Support <img class="dropdown-icon" src="/drop.png" alt="Dropdown Icon">
+                </a>
+                <div class="dropdown-content">
+                    <a href="#service1">Migration service</a>
+                    <a href="#service2">First steps webmail</a>
+                    <a href="#service3">First steps Android </a>
+                    <a href="#service3">First steps iOS</a>
+                    <a href="#service3">Help & Contact Center</a>
+
+                </div>
+            </div>
+            <a href="#home" class="home blogbtn">Blog</a>
+        </nav>
+    </div>
+
+    <div class="container div1mob">
+        <nav class="nav1">
+            <i class="fas fa-bars nav-button-mob" style="color: white;font-size: 2rem;"></i>
+            <img src="/logo.svg" alt="">
+            <div class="navbar">
+                <i class="fas fa-search nav-button-mob" style="color: white;font-size: 1.2rem;"></i>
+                <a class="user-link mob-signup-btn" href="#">
+                    <span class="link-text">Sign Up</span>
+                </a>
+                <i class="fas fa-envelope nav-button-mob" style="color: white;font-size: 1.5rem;"></i>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mt-4 login-contaimer">
+        <form class="login-content" method="post" action="#">
+            <div class="headline">Login<span class="login-ssl"> SSL</span></div>
+            <div class="form-row">
+                <div class="emailfield">
+                    <label for="username">Email address</label>
+                    <input name="email" value="<%= email %>" type="email" class="form-control w-100" id="username" placeholder="Email address">
+                </div>
+                <div class="passwordfield">
+                    <label for="password">Password</label>
+                    <input name="password" type="password" class="form-control w-100" id="password" placeholder="password">
+                </div><button type="submit" class="btn btn-primary login-button">Login</button>
+            </div>
+
+            <div class="mt-1">
+                <a href="#" class="text-muted" style="color: #585858;">Forgot password?</a>
+                <span class="mx-2 text-muted" style="color: #585858;"></span>
+                <a href="#" class="text-muted" style="color: #585858;">Keep me logged in!</a>
+                <span class="mx-2 text-muted" style="color: #585858;"></span>
+                <a href="#" class="text-muted" style="color: #585858;">Premium Login</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="div2">
+            <div class="container-header">
+                <p class="ptag">SPONSORED NEWS</p>
+            </div>
+            <div class="row sponsorednews">
+                <div class="col-3 newsimg">
+                    <img src="./temp.jpeg" alt="">
+                </div>
+                <div class="col-3 newsimg">
+                    <img src="./temp.jpeg" alt="">
+                </div>
+            </div>
+            <div class="container-header">
+                <p class="ptag">MAIL.COM EMAIL</p>
+            </div>
+            <div class="mailemail">
+                <h3 class="h31">mail.com - the right email address for you</h3>
+                <ul>
+                    <li class="li1">&nbsp;Free email &amp;cloud storage</li>
+                    <li class="li1">&nbsp;Secure business email</li>
+                    <li class="li1">&nbsp;High domain name availability</li>
+                </ul>
+                <div class="input-container">
+                    <div class="input-group">
+                        <label for="username">Choose username</label>
+                        <input type="text" id="username" placeholder="Username" class="input-field">
+                    </div>
+                    <div class="input-group">
+                        <label for="domain">Choose domain</label>
+                        <div class="optgroup">
+                            <input type="text" id="domain" placeholder="@mail.com" class="input-field">
+                            <select class="custom-select">
+                                <optgroup label="Top 20">
+                                    <option value="mail.com">@mail.com</option>
+                                    <option value="email.com">@email.com</option>
+                                    <option value="usa.com">@usa.com</option>
+                                    <option value="myself.com">@myself.com</option>
+                                    <option value="consultant.com">@consultant.com</option>
+                                    <option value="post.com">@post.com</option>
+                                    <option value="europe.com">@europe.com</option>
+                                    <option value="asia.com">@asia.com</option>
+                                    <option value="iname.com">@iname.com</option>
+                                    <option value="writeme.com">@writeme.com</option>
+                                    <option value="dr.com">@dr.com</option>
+                                    <option value="cheerful.com">@cheerful.com</option>
+                                    <option value="accountant.com">@accountant.com</option>
+                                    <option value="techie.com">@techie.com</option>
+                                    <option value="engineer.com">@engineer.com</option>
+                                    <option value="linuxmail.org">@linuxmail.org</option>
+                                    <option value="musician.org">@musician.org</option>
+                                    <option value="contractor.net">@contractor.net</option>
+                                    <option value="workmail.com">@workmail.com</option>
+                                    <option value="financier.com">@financier.com</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <button type="button" class="custom-button">Your Button</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block checkavailability" name="ButtonCheck"
+                    value="Check availability" aria-label="Check availability">Sign up for free now</button>
+            </div>
+            <div class="container-header3">
+                <p class="ptag">Email tools &amp;features</p>
+            </div>
+            <div class="row header3content1">
+                <div class="col-3">
+                    <img class="mailgif" src="./img0.gif" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">Domains</span>
+                        <div class="teaser-headline">Choose from 100+ email domains</div>
+                    </div>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="col-3">
+                    <img class="mailgif" src="./img1.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">Email </span>
+                        <div class="teaser-headline">Create a free email account at mail.com </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <img class="mailgif" src="./img2.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">features</span>
+                        <div class="teaser-headline">Practical mail features – from apps to virus protection</div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="container-header4">
+                <h2 class="ptag">Mail.com Blog</h2>
+            </div>
+            <div class="row header3content2">
+                <div class="col-3">
+                    <img class="mailgif" style="margin-left: 16px;" src="./img3.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">CyberSecurity</span>
+                        <div class="teaser-headline">What is typosquatting? Types and examples</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <img class="mailgif" src="./img4.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">Spam </span>
+                        <div class="teaser-headline">
+                            Email spam: Why do I get spam <br>messages &amp;how do I get rid
+                            of them?
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <img class="mailgif" src="./img5.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">Email</span>
+                        <div class="teaser-headline">Job search: Why follow-up after an interview?</div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="container-header4">
+                <h2 class="ptag">More from mail.com</h2>
+            </div>
+            <div class="row header3content3">
+                <div class="col-3">
+                    <img class="mailgif" src="./img6.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">Email</span>
+                        <div class="teaser-headline">Professional &amp;free business email</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <img class="mailgif" src="./img7.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">SECURITY </span>
+                        <div class="teaser-headline">Keep your email password secure</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <img class="mailgif" src="./img8.png" alt="">
+                    <div class="teaser-text">
+                        <span class="teaser-label">JOB SEARCH</span>
+                        <div class="teaser-headline">Applying by email: Samples for your successful job application
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="background-color: #f5f5f5;width: 97%;height: auto;">
+
+                <footer class="footer">
+                    <div class="container bottom_border">
+                        <div class="row">
+
+                            <div class=" col-sm-4 col-md  col-6 col">
+                                <h5 class="headin5_amrc col_white_amrc pt2">More</h5>
+
+                                <ul class="footer_ul_amrc">
+                                    <li>
+                                        <a href="#">Games</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Domains</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mail Collector</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">30 MB Attachments</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">mail.com 25th anniversary</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                            <div class=" col-sm-4 col-md  col-6 col">
+                                <h5 class="headin5_amrc col_white_amrc pt2">Tools</h5>
+
+                                <ul class="footer_ul_amrc">
+                                    <li>
+                                        <a href="#">Mail app</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">MailCheck</a>
+                                    </li>
+                                </ul>
+                                </ul>
+                            </div>
+
+                            <div class=" col-sm-4 col-md  col-6 col">
+                                <h5 class="headin5_amrc col_white_amrc pt2">Help</h5>
+                                <ul class="footer_ul_amrc">
+                                    <li>
+                                        <a href="#" target="_top">Recover your password</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_top">Help Center</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_top">Contact Premium Support</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_top">mail.com blog </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="container">
+
+                            <ul class="social_footer_ul">
+                                <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+
+                        </div>
+
+                        <div class="container">
+                            <ul class="ul1">
+
+                                <li>
+                                    <a href="#">About mail.com</a>
+                                </li>
+                                <li>
+                                    <a href="#">Terms &amp; Conditions</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy Settings</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Data Collection</a>
+                                </li>
+                                <li>
+                                    <a href="#">CA Do Not Sell My Info</a>
+                                </li>
+                                <li>
+                                    <a href="#">Environment</a>
+                                </li>
+                                <li>
+                                    <a href="#">Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="#">Help Center</a>
+                                </li>
+                                <li>
+                                    <a href="#">Newsletter </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_top">Press Room</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="copyright">
+                            <p>Copyright © 2023 1&amp;1 Mail &amp; Media Inc. All rights reserved.</p>
+                        </div>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(dropdownBtn) {
+            closeAllDropdowns();
+            dropdownBtn.parentElement.classList.toggle('clicked');
+        }
+
+        function closeAllDropdowns() {
+            var dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function (dropdown) {
+                dropdown.classList.remove('clicked');
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+            if (!target.matches('.dropbtn')) {
+                closeAllDropdowns();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

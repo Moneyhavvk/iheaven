@@ -1,0 +1,11 @@
+http://127.0.0.1:3005
+
+
+
+http://127.0.0.1:3006
+https://127.0.0.1:3005
+http://127.0.0.2:3005
+http://mpchs.com
+https://mpchs.com
+http://mpchs.com:8080
+http://mpchs.com:8081
