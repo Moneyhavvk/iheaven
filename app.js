@@ -6,12 +6,12 @@ const appController = require("./controllers/appController");
 // connectDB();
 const mongoose = require('mongoose');
 
-const uri = 'mongodb+srv://nursshafes:m2KSULe4dhur22qq@cluster0.wu1ntif.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(uri, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true,
-    useFindAndModify: true
+    useFindAndModify: false
 });
 
 const connection = mongoose.connection;
