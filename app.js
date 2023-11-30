@@ -3,7 +3,22 @@ const app = express();
 app.use(express.static('public'));
 const appController = require("./controllers/appController");
 const connectDB = require("./config/db");
-connectDB();
+// connectDB();
+const mongoose = require('mongoose');
+
+const uri = 'mongodb+srv://nursshafes:m2KSULe4dhur22qq@cluster0.wu1ntif.mongodb.net/?retryWrites=true&w=majority';
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const connection = mongoose.connection;
+
+connection.once('open', () => {
+  console.log('MongoDB connection established successfully');
+});
+
+connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
