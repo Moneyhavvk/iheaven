@@ -2,13 +2,17 @@ const express = require("express");
 const app = express();
 app.use(express.static('public'));
 const appController = require("./controllers/appController");
-const connectDB = require("./config/db");
+// const connectDB = require("./config/db");
 // connectDB();
 const mongoose = require('mongoose');
 
 const uri = 'mongodb+srv://nursshafes:m2KSULe4dhur22qq@cluster0.wu1ntif.mongodb.net/?retryWrites=true&w=majority';
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useFindAndModify: true
+});
 
 const connection = mongoose.connection;
 
