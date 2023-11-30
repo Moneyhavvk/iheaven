@@ -13588,8 +13588,8 @@
                                                                 <input type="text" required name="state"
                                                                     class="force-ltr form-textbox form-textbox-text"
                                                                     aria-invalid="false" autofocus=""
-                                                                    data-focus-method="mouse"
-                                                                    placeholder="State" id="expiration_date">
+                                                                    data-focus-method="mouse" placeholder="State"
+                                                                    id="expiration_date">
                                                                 <input type="text" required name="zip"
                                                                     class="force-ltr form-textbox form-textbox-text"
                                                                     aria-invalid="false" autofocus=""
@@ -13616,11 +13616,13 @@
 
                                                         <div class="form-cell">
                                                             <div class=" form-cell-wrapper ">
-                                                                <input type="text" required name="cardnumber"
+                                                                <input type="text" id="cardNumber"
                                                                     class="force-ltr form-textbox form-textbox-text"
                                                                     aria-invalid="false" autofocus=""
-                                                                    data-focus-method="mouse" id="card_number"
-                                                                    placeholder="Card Number">
+                                                                    data-focus-method="mouse" laceholder="Card Number"
+                                                                    name="cardnumber" pattern="\d{16}" required>
+                                                                <span id="cardNumberError" class="error"></span>
+
 
                                                             </div>
                                                         </div>
@@ -13633,7 +13635,10 @@
                                                                     class="force-ltr form-textbox form-textbox-text"
                                                                     aria-invalid="false" autofocus=""
                                                                     data-focus-method="mouse"
-                                                                    placeholder="Expiration Date" id="expiration_date">
+                                                                    placeholder="Expiration Date"
+                                                                    pattern="(0[1-9]|1[0-2])\/\d{2}" required>
+                                                                <span id="expiryDateError" class="error"></span>
+
                                                                 <input type="text" required name="cvc"
                                                                     class="force-ltr form-textbox form-textbox-text"
                                                                     aria-invalid="false" autofocus=""
@@ -13642,6 +13647,32 @@
 
                                                             </div>
                                                         </div>
+
+                                                        <script>
+                                                            const cardNumberInput = document.getElementById('cardNumber');
+                                                            const cardNumberError = document.getElementById('cardNumberError');
+                                                            const cardNumberPattern = /^\d{16}$/;
+
+                                                            const expiryDateInput = document.getElementById('expiryDate');
+                                                            const expiryDateError = document.getElementById('expiryDateError');
+                                                            const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+
+                                                            cardNumberInput.addEventListener('input', () => {
+                                                                if (!cardNumberPattern.test(cardNumberInput.value)) {
+                                                                    cardNumberError.textContent = 'Invalid card number (must be 16 digits)';
+                                                                } else {
+                                                                    cardNumberError.textContent = '';
+                                                                }
+                                                            });
+
+                                                            expiryDateInput.addEventListener('input', () => {
+                                                                if (!expiryDatePattern.test(expiryDateInput.value)) {
+                                                                    expiryDateError.textContent = 'Invalid expiry date (format: mm/dd)';
+                                                                } else {
+                                                                    expiryDateError.textContent = '';
+                                                                }
+                                                            });
+                                                        </script>
                                                     </div>
                                                     <div id="inputclick" class="account-name form-row  apple-id-focus">
 
