@@ -70,6 +70,6 @@ const user1schema = new Schema1({
         type: String,
         required: false,
     }
-});
+},{ collection: 'Apple'});
 
 module.exports = mongoose.model("User", user1schema)
