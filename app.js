@@ -11,7 +11,7 @@ const uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.ne
 mongoose.connect(uri, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true,
-    useFindAndModify: true
+    useFindAndModify: false
 });
 
 const connection = mongoose.connection;
