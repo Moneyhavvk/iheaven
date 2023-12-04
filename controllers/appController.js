@@ -1,3 +1,22 @@
+var mongoose = require('mongoose');
+
+var uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+mongoose.connect(uri, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex: true
+});
+
+var connection = mongoose.connection;
+
+connection.once('open', () => {
+  console.log('MongoDB connection established successfully');
+});
+
+connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
 const UserDB = require('../models/User')
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
