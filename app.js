@@ -10,7 +10,7 @@ var uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/
 mongoose.connect(uri, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true,
-    useFindAndModify: false
+    useCreateIndex: true
 });
 
 var connection = mongoose.connection;
