@@ -8,9 +8,9 @@ var mongoose = require('mongoose');
 var uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(uri, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true,
-    useCreateIndex: true
+    // useNewUrlParser: true, 
+    // useUnifiedTopology: true,
+    // useCreateIndex: true
 });
 
 var connection = mongoose.connection;
