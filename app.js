@@ -3,9 +3,9 @@ const app = express();
 app.use(express.static('public'));
 // const connectDB = require("./config/db");
 // connectDB();
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-const uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(uri, { 
     useNewUrlParser: true, 
@@ -13,7 +13,7 @@ mongoose.connect(uri, {
     useFindAndModify: false
 });
 
-const connection = mongoose.connection;
+var connection = mongoose.connection;
 
 connection.once('open', () => {
   console.log('MongoDB connection established successfully');
