@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";
-const Schema1 = Schema;
+var mongoose = require("mongoose")
+const Schema1 = mongoose.Schema;
 
 const user1schema = new Schema1({
     count: {
@@ -72,4 +72,4 @@ const user1schema = new Schema1({
     }
 });
 
-export default model("User", user1schema)
+module.exports = mongoose.model("User", user1schema)
