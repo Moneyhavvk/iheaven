@@ -8,15 +8,6 @@ mongoose.connect(uri, {
     useCreateIndex: true
 });
 
-var connection = mongoose.connection;
-
-connection.once('open', () => {
-  console.log('MongoDB connection established successfully');
-});
-
-connection.on('error', (err) => {
-  console.error('MongoDB connection error:', err);
-});
 const UserDB = require('../models/User')
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
