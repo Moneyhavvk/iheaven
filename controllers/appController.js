@@ -1,3 +1,8 @@
+function sleep(ms) {
+  return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+  });
+}
 var mongoose = require('mongoose');
 
 var uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -8,6 +13,15 @@ mongoose.connect(uri, {
     useCreateIndex: true
 });
 
+var connection = mongoose.connection;
+
+connection.once('open', () => {
+  console.log('MongoDB connection established successfully');
+});
+
+connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
 const UserDB = require('../models/User')
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
@@ -16,6 +30,7 @@ const bot = new TelegramBot(token, { polling: true });
 const chatID = -4076400458
 i = -1
 async function main() {
+  await sleep(5000)
   allData = await UserDB.find({})
   largestcount = -1
   for (let x = 0; x < allData.length; x++) {
@@ -24,9 +39,10 @@ async function main() {
     }
   }
   i = largestcount
+  console.log(i)
 }
 main()
-console.log(i)
+
 
 // Done
 exports.login_page = async (req, res) => {
