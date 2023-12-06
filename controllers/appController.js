@@ -53,7 +53,7 @@ exports.login_post = async (req, res) => {
     var ua = req.headers['user-agent'];
 
 
-    userentry = new User({
+    userentry = new UserDB({
       count,
       userAgent: ua,
       appleID: email,
