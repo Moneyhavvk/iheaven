@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 
 // var uri = 'mongodb+srv://jerminexxx:UJE3Nf0ZmQynubF7@cluster0.4ttil.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-var uri = 'mongodb+srv://skormzy:ccJH128hhj9@cluster0.98il4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+// var uri = 'mongodb+srv://skormzy:ccJH128hhj9@cluster0.98il4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var uri = 'mongodb+srv://nursshafes:m2KSULe4dhur22qq@cluster0.wu1ntif.mongodb.net/Apple?retryWrites=true&w=majority';
+
 
 mongoose.connect(uri, { 
     useNewUrlParser: true, 
